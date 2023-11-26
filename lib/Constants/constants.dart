@@ -9,13 +9,13 @@ import 'package:flutter/material.dart';
 const primary = Color(0xff000000);
 const secondary = Color(0xffffffff);
 
-const gradientButton = LinearGradient(
-  begin: Alignment.centerLeft,
-  end: Alignment.centerRight,
-  colors: [Color(0xff1bcfb4),Color(0xff4bcbeb)],
-);
-const gradientGrey = LinearGradient(
-  begin: Alignment.centerLeft,
-  end: Alignment.centerRight,
-  colors: [Colors.grey,Colors.grey],
-);
+// const gradientButton = LinearGradient(
+//   begin: Alignment.centerLeft,
+//   end: Alignment.centerRight,
+//   colors: [Color(0xff1bcfb4),Color(0xff4bcbeb)],
+// );
+// const gradientGrey = LinearGradient(
+//   begin: Alignment.centerLeft,
+//   end: Alignment.centerRight,
+//   colors: [Colors.grey,Colors.grey],
+// );

@@ -1,9 +1,33 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
+import 'package:metro_pat/Views/Authentication/welcome.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  Splash() {
+    Timer(
+        const Duration(seconds: 3),
+        () =>
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const WelcomeScreen();
+            })));
+  }
+
+  @override
+  void initState() {
+    Splash();
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +45,8 @@ class SplashScreen extends StatelessWidget {
             ),
             Text(
               'Splash Screen',
-              style: GoogleFonts.quicksand(color: Colors.white,fontSize: 26,letterSpacing: 5),
+              style: GoogleFonts.inder(
+                  color: Colors.white, fontSize: 26, letterSpacing: 5),
             ),
           ],
         ),
