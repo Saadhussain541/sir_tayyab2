@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
-import 'package:metro_pat/Views/Authentication/welcome.dart';
+import 'package:metro_pat/Views/Mobile_views/Authentication/welcome.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

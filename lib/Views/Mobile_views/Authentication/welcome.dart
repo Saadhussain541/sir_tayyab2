@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
-import 'package:metro_pat/Views/Authentication/login_screen.dart';
-import 'package:metro_pat/Views/Authentication/signup_screen.dart';
+import 'package:metro_pat/Views/Mobile_views/Authentication/signup_screen.dart';
 
-import '../../Widgets/button.dart';
+import '../../../Widgets/button.dart';
+import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
