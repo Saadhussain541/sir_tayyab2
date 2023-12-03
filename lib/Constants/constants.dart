@@ -19,3 +19,7 @@ const secondary = Color(0xffffffff);
 //   end: Alignment.centerRight,
 //   colors: [Colors.grey,Colors.grey],
 // );
+
+// Font Size
+const double headingSize=18;
+const double extraHeadingSize=22;

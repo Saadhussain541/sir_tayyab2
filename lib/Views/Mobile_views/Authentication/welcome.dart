@@ -5,7 +5,7 @@ import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
 import 'package:metro_pat/Views/Mobile_views/Authentication/signup_screen.dart';
 
-import '../../../Widgets/button.dart';
+import '../../../Reusable_Widget/button.dart';
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {

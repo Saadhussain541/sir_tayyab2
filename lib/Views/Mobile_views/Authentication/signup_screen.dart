@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
 
-import '../../../Widgets/button.dart';
-import '../../../Widgets/text_field.dart';
+import '../../../Reusable_Widget/button.dart';
+import '../../../Reusable_Widget/text_field.dart';
 
 
 class SignUp extends StatelessWidget {

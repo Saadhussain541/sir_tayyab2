@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth;
@@ -27,4 +29,34 @@ double getProportionateScreenWidth(double inputWidth) {
   double screenWidth = SizeConfig.screenWidth;
   // 375 is the layout width that designer use
   return (inputWidth / 375.0) * screenWidth;
+}
+
+TextStyle headingStyle({Color color1=secondary,FontWeight fontWeight1=FontWeight.w300})
+{
+  return TextStyle(
+      fontWeight: fontWeight1,
+      color: color1,
+      fontSize: headingSize
+  );
+}
+//Saad
+TextStyle headingStyle1({Color color1=primary})
+{
+  return TextStyle(
+      fontWeight: FontWeight.w600,
+      color: color1,
+      fontSize: extraHeadingSize
+  );
+}
+SizedBox verticalSpace(double value)
+{
+  return SizedBox(
+    height: SizeConfig.screenHeight*value,
+  );
+}
+SizedBox horizontalSpace(double value)
+{
+  return SizedBox(
+    width: SizeConfig.screenWidth*value,
+  );
 }
