@@ -30,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),),
           leading:
         IconButton(
-          icon: Icon(Icons.chevron_left,color: primary,),
+          icon: const Icon(Icons.chevron_left,color: primary,),
           onPressed: (){
             Navigator.pop(context);
           },
@@ -54,7 +54,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const CircleAvatar(
                       radius: 30,
                       backgroundColor: primary,
-                      backgroundImage: AssetImage('images/humanavatar.png'),
+                      backgroundImage: AssetImage('assets/humanavatar.png'),
                     ),
 
                     const SizedBox(
@@ -71,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),),
                     ),
                     IconButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfile(),));
                     }, icon: const Icon(Icons.edit)),
                   ],
                 ),
@@ -131,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             const CircleAvatar(
                               radius: 40,
                               backgroundColor: secondary,
-                              backgroundImage: AssetImage('images/humanavatar.png'),
+                              backgroundImage: AssetImage('assets/humanavatar.png'),
                             ),
                             const SizedBox(
                               width: 10,
@@ -183,11 +183,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderModule(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const CalenderModule(),));
                     },
                     child: ListTile(
                       leading: const Icon(Icons.calendar_today, color: primary,),
-                      title: Text("Calendfder", style: GoogleFonts.inder(
+                      title: Text("Calender", style: GoogleFonts.inder(
                           fontSize: 16,
                           color: primary
                       ),),
@@ -197,7 +197,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => JobDiscription(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const JobDiscription(),));
                     },
                     child: ListTile(
                       leading: const Icon(Icons.calendar_today, color: primary,),
@@ -211,7 +211,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MapScreen(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const MapScreen(),));
                     },
                     child: ListTile(
                       leading: const Icon(Icons.calendar_today, color: primary,),
@@ -225,7 +225,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationModule(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const NotificationModule(),));
                     },
                     child: ListTile(
                       leading: const Icon(Icons.calendar_today, color: primary,),
@@ -239,7 +239,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Card(
                   child: GestureDetector(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => JobModule(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const JobModule(),));
                     },
                     child: ListTile(
                       leading: const Icon(Icons.calendar_today, color: primary,),

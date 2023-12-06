@@ -17,7 +17,7 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
 
-  List industryImages = ['images/industry_images/img_one.jpeg','images/industry_images/img_two.jpeg','images/industry_images/img_three.jpeg','images/industry_images/img_four.jpeg','images/industry_images/img_five.jpeg'];
+  List industryImages = ['assets/industry_images/img_one.jpeg','assets/industry_images/img_two.jpeg','assets/industry_images/img_three.jpeg','assets/industry_images/img_four.jpeg','assets/industry_images/img_five.jpeg'];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Home")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.home, color: secondary,),
@@ -70,7 +70,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Profile")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.person, color: secondary,),
@@ -84,7 +84,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("WorkLog")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => WorkLog(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const WorkLog(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.bar_chart_outlined, color: secondary,),
@@ -97,7 +97,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServiceHistory(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ServiceHistory(),));
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Jobs History")));
                 },
                 child: ListTile(
@@ -112,7 +112,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Privacy Policy")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.privacy_tip_rounded, color: secondary,),
@@ -126,7 +126,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Language")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.language, color: secondary,),
@@ -140,7 +140,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               GestureDetector(
                 onTap: (){
                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Settings")));
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SettingModule(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingModule(),));
                 },
                 child: ListTile(
                   leading: const Icon(Icons.settings_suggest_sharp, color: secondary,),
@@ -181,7 +181,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             child: const CircleAvatar(
                               radius: 30,
                               backgroundColor: secondary,
-                              backgroundImage: AssetImage('images/humanavatar.png'),
+                              backgroundImage: AssetImage('assets/humanavatar.png'),
                             ),
                           ),
 

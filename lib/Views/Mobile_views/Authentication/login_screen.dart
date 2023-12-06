@@ -1,6 +1,4 @@
-import 'dart:convert';
 
-import 'package:achievement_view/achievement_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,8 +6,6 @@ import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
 import 'package:metro_pat/Views/Mobile_views/Authentication/signup_screen.dart';
 import 'package:metro_pat/Views/Mobile_views/dashboard_screen.dart';
-import 'package:metro_pat/api_services/signin_services.dart';
-
 import '../../../Reusable_Widget/button.dart';
 import '../../../Reusable_Widget/text_field.dart';
 
@@ -96,16 +92,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 PlatformButton(
                   text: 'Login',
                   onpressed: () async {
-                    UserCredentials.userLogin(
-                      context: context,
+                    // UserCredentials.userLogin(
+                    //   context: context,
+                    //
+                    //   userPassword: userPassword.text.toString(),
+                    //   userName: userName.text.toString()
+                    //
+                    //
+                    // );
 
-                      userPassword: userPassword.text.toString(),
-                      userName: userName.text.toString()
-
-
-                    );
-
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const DashboardScreen(),));
                     // try {
                     //   await UserCredentials.userLogin(
                     //     userPassword: userPassword.text.toString(),

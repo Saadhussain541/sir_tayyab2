@@ -47,7 +47,7 @@ class _EditProfileState extends State<EditProfile> {
           color: secondary
         ),),
         leading:  IconButton(
-          icon: Icon(Icons.arrow_back,color: secondary,),
+          icon: const Icon(Icons.arrow_back,color: secondary,),
           onPressed: (){
             Navigator.pop(context);
           },
@@ -106,7 +106,7 @@ class _EditProfileState extends State<EditProfile> {
                     child: const CircleAvatar(
                       radius: 40,
                       backgroundColor: primary,
-                      backgroundImage: AssetImage('images/humanavatar.png'),
+                      backgroundImage: AssetImage('assets/humanavatar.png'),
                     ),
                   ),
                 ),
