@@ -1,8 +1,9 @@
+import 'package:achievement_view/achievement_view.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:metro_pat/Views/Mobile_views/dashboard_screen.dart';
 
 class UserCredentials{
-
  static Future userRegister({String? userName, String? userPassword})async{
   var headers = {
    'Content-Type': 'application/x-www-form-urlencoded',
@@ -36,7 +37,7 @@ class UserCredentials{
   }
  }
 
- static Future userLogin({String? userName, String? userPassword})async{
+ static Future userLogin({String? userName, String? userPassword,required BuildContext context})async{
   var headers = {
    'Content-Type': 'application/x-www-form-urlencoded',
    'Cookie': 'PHPSESSID=c5a1e7ee3d828478865bdb52613df536'
@@ -54,7 +55,23 @@ class UserCredentials{
 
   if (response.statusCode == 200) {
    var res = await response.stream.bytesToString();
+   print(res);
+   if (res.contains("Login successful")) {
+    Navigator.pushReplacement(
+     context,
+     MaterialPageRoute(builder: (context) => DashboardScreen()));
+   }
+   else{
+    // Handle other cases or show an error message
+    print('Not success');
+    ScaffoldMessenger.of(context).showSnackBar(
+     SnackBar(
+      content: Text('Login failed. Please check your credentials.'),
+     ),
+    );
+   }
    return res;
+
   }
   else {
    debugPrint(response.reasonPhrase);

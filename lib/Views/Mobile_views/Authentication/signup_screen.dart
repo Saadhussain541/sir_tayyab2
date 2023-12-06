@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
+import 'package:metro_pat/Views/Mobile_views/Authentication/login_screen.dart';
 import 'package:metro_pat/api_services/signin_services.dart';
 
 import '../../../Reusable_Widget/button.dart';
@@ -103,7 +104,11 @@ class _SignUpState extends State<SignUp> {
                   textStyle: Theme.of(context).textTheme.bodyLarge,
                 )),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return const LoginScreen();
+                    },));
+                  },
                   child: Text(
                     "Login",
                     style: GoogleFonts.inder(

@@ -1,8 +1,13 @@
+import 'dart:convert';
+
+import 'package:achievement_view/achievement_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
+import 'package:metro_pat/Views/Mobile_views/Authentication/signup_screen.dart';
+import 'package:metro_pat/Views/Mobile_views/dashboard_screen.dart';
 import 'package:metro_pat/api_services/signin_services.dart';
 
 import '../../../Reusable_Widget/button.dart';
@@ -90,11 +95,36 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 PlatformButton(
                   text: 'Login',
-                  onpressed: () {
+                  onpressed: () async {
                     UserCredentials.userLogin(
+                      context: context,
+
                       userPassword: userPassword.text.toString(),
-                      userName: userName.text.toString(),
+                      userName: userName.text.toString()
+
+
                     );
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                    // try {
+                    //   await UserCredentials.userLogin(
+                    //     userPassword: userPassword.text.toString(),
+                    //     userName: userName.text.toString(),
+                    //   );
+                    //   AchievementView(
+                    //       title: "Login Successfully",
+                    //       icon: Icon(Icons.emoji_emotions)
+                    //   )..show(context);
+                    //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashboardScreen(),));
+                    //
+                    // } catch (error) {
+                    //   print(error);
+                    //   ScaffoldMessenger.of(context).showSnackBar(
+                    //     SnackBar(
+                    //       content: Text('Login failed. Please check your credentials.'),
+                    //     ),
+                    //   );
+                    // }
                   },
                   color: primary,
                   height: SizeConfig.screenHeight * 0.060,
@@ -112,7 +142,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   textStyle: Theme.of(context).textTheme.bodyLarge,
                 )),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return const SignUp();
+                    },));
+                  },
                   child: Text(
                     "Sign Up",
                     style: GoogleFonts.inder(

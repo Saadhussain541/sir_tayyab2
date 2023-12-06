@@ -28,10 +28,15 @@ class _SettingModuleState extends State<SettingModule> {
             color: secondary,
             fontSize: headingSize
         ),),
-        actions: const [
+        actions: [
           Padding(
               padding: EdgeInsets.only(right: 10),
-              child: Icon(Icons.close,color: secondary,))
+              child: IconButton(
+                icon: Icon(Icons.close,color: secondary,),
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+              ))
         ],
       ),
       body: SafeArea(

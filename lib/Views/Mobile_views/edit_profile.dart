@@ -46,7 +46,12 @@ class _EditProfileState extends State<EditProfile> {
           fontSize: 18,
           color: secondary
         ),),
-        leading: const Icon(Icons.keyboard_arrow_left, color: secondary,),
+        leading:  IconButton(
+          icon: Icon(Icons.arrow_back,color: secondary,),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        )
       ),
       body: SingleChildScrollView(
         physics: const ScrollPhysics(),

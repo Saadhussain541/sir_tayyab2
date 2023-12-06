@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:metro_pat/Views/Mobile_views/Authentication/splash_screen.dart';
+import 'package:metro_pat/Views/Mobile_views/dashboard_screen.dart';
 import '../Mobile_views/work_log.dart';
 
 

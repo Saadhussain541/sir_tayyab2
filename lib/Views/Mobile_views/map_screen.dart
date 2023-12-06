@@ -24,6 +24,7 @@ class _MapScreenState extends State<MapScreen> {
               color: secondary
           ),),
           leading: IconButton(onPressed: (){
+            Navigator.pop(context);
           }, icon: const Icon(Icons.keyboard_arrow_left, color: secondary,)),
           actions: [
 

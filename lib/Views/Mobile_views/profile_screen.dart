@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
+import 'package:metro_pat/Views/Mobile_views/calender_module.dart';
+import 'package:metro_pat/Views/Mobile_views/edit_profile.dart';
+import 'package:metro_pat/Views/Mobile_views/job_discription.dart';
+import 'package:metro_pat/Views/Mobile_views/job_module.dart';
+import 'package:metro_pat/Views/Mobile_views/map_screen.dart';
+import 'package:metro_pat/Views/Mobile_views/notification_module.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -22,7 +28,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           title: Text("Profile Settings", style: GoogleFonts.inder(
             fontSize: 18,
           ),),
-          leading: const Icon(Icons.keyboard_arrow_left),
+          leading:
+        IconButton(
+          icon: Icon(Icons.chevron_left,color: primary,),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        )
         ),
         body: SingleChildScrollView(
           physics: const ScrollPhysics(),
@@ -57,9 +69,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         color: primary,
                         fontWeight: FontWeight.w600
                       ),),
-                    )
+                    ),
+                    IconButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfile(),));
+                    }, icon: const Icon(Icons.edit)),
                   ],
                 ),
+
 
                 const SizedBox(
                   height: 30,
@@ -160,7 +176,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     )
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                Card(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => CalenderModule(),));
+                    },
+                    child: ListTile(
+                      leading: const Icon(Icons.calendar_today, color: primary,),
+                      title: Text("Calendfder", style: GoogleFonts.inder(
+                          fontSize: 16,
+                          color: primary
+                      ),),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => JobDiscription(),));
+                    },
+                    child: ListTile(
+                      leading: const Icon(Icons.calendar_today, color: primary,),
+                      title: Text("Job Description", style: GoogleFonts.inder(
+                          fontSize: 16,
+                          color: primary
+                      ),),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MapScreen(),));
+                    },
+                    child: ListTile(
+                      leading: const Icon(Icons.calendar_today, color: primary,),
+                      title: Text("Map", style: GoogleFonts.inder(
+                          fontSize: 16,
+                          color: primary
+                      ),),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationModule(),));
+                    },
+                    child: ListTile(
+                      leading: const Icon(Icons.calendar_today, color: primary,),
+                      title: Text("Notification", style: GoogleFonts.inder(
+                          fontSize: 16,
+                          color: primary
+                      ),),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => JobModule(),));
+                    },
+                    child: ListTile(
+                      leading: const Icon(Icons.calendar_today, color: primary,),
+                      title: Text("Job Module", style: GoogleFonts.inder(
+                          fontSize: 16,
+                          color: primary
+                      ),),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

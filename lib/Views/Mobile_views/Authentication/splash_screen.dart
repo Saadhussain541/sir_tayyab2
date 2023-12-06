@@ -41,14 +41,16 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               height: 200,
               width: 200,
-              color: secondary,
-              child: const Placeholder(),
+              child: Image(
+                image: AssetImage('assets/metro_pat_logo.png'),
+              ),
+
             ),
-            Text(
-              'Splash Screen',
-              style: GoogleFonts.inder(
-                  color: Colors.white, fontSize: 26, letterSpacing: 5),
-            ),
+            // Text(
+            //   'Splash Screen',
+            //   style: GoogleFonts.inder(
+            //       color: Colors.white, fontSize: 26, letterSpacing: 5),
+            // ),
           ],
         ),
       ),

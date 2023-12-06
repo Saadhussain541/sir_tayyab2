@@ -22,10 +22,10 @@ class _JobDiscriptionState extends State<JobDiscription> {
             color: secondary,
             fontSize: headingSize
         ),),
-        actions: const [
-          Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: Icon(Icons.close,color: secondary,))
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.pop(context);
+          }, icon: const Icon(Icons.close,color: secondary,))
         ],
       ),
       body: SafeArea(
