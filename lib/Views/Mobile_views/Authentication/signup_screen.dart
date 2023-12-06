@@ -3,14 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
+import 'package:metro_pat/api_services/signin_services.dart';
 
 import '../../../Reusable_Widget/button.dart';
 import '../../../Reusable_Widget/text_field.dart';
 
 
-class SignUp extends StatelessWidget {
+class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+
+  TextEditingController userName = TextEditingController();
+  TextEditingController userPhone = TextEditingController();
+  TextEditingController userPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    userName.dispose();
+    userPhone.dispose();
+    userPassword.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,21 +67,26 @@ class SignUp extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.050,
                 ),
-                const MyTextField("", false,text: 'UserName/Email'),
+                MyTextField("", false,text: 'UserName/Email', controller: userName,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.020,
                 ),
-                const MyTextField("",false, text: 'Phone Number'),
+                MyTextField("",false, text: 'Phone Number', controller: userPhone,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.020,
                 ),
-                const MyTextField("",true, text: 'Password'),
+                MyTextField("",true, text: 'Password', controller: userPassword,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.030,
                 ),
                 PlatformButton(
                   text: 'Sign Up',
-                  onpressed: () {},
+                  onpressed: () {
+                    UserCredentials.userRegister(
+                      userName: userName.text.toString(),
+                      userPassword: userPassword.text.toString(),
+                    );
+                  },
                   color: primary,
                   height: SizeConfig.screenHeight * 0.060,
                   width: SizeConfig.screenWidth/3, bg: secondary,

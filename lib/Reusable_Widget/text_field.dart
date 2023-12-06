@@ -5,11 +5,13 @@ import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
 
 class MyTextField extends StatelessWidget {
-  const MyTextField(this.endtext,this.isVisible,{super.key, required this.text,});
+  const MyTextField(this.endtext,this.isVisible,{super.key, required this.text, required this.controller});
 
   final String text;
   final String endtext;
   final bool isVisible;
+
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,6 +34,7 @@ class MyTextField extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: TextFormField(
+              controller: controller,
               obscureText:isVisible ,
               decoration:const InputDecoration(
                   filled: true,

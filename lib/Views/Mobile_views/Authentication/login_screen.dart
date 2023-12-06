@@ -3,13 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metro_pat/Constants/constants.dart';
 import 'package:metro_pat/Constants/size_config.dart';
+import 'package:metro_pat/api_services/signin_services.dart';
 
 import '../../../Reusable_Widget/button.dart';
 import '../../../Reusable_Widget/text_field.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  TextEditingController userName = TextEditingController();
+  TextEditingController userPhone = TextEditingController();
+  TextEditingController userPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,15 +58,15 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.050,
                 ),
-                const MyTextField("", false,text: 'UserName/Email'),
+                MyTextField("", false,text: 'UserName/Email', controller: userName,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.020,
                 ),
-                const MyTextField("(Optional)",false, text: 'Phone Number'),
+                MyTextField("(Optional)",false, text: 'Phone Number',controller: userPhone,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.020,
                 ),
-                const MyTextField("",true, text: 'Password'),
+                MyTextField("",true, text: 'Password', controller: userPassword,),
                 SizedBox(
                   height: SizeConfig.screenHeight * 0.020,
                 ),
@@ -80,7 +90,12 @@ class LoginScreen extends StatelessWidget {
                 ),
                 PlatformButton(
                   text: 'Login',
-                  onpressed: () {},
+                  onpressed: () {
+                    UserCredentials.userLogin(
+                      userPassword: userPassword.text.toString(),
+                      userName: userName.text.toString(),
+                    );
+                  },
                   color: primary,
                   height: SizeConfig.screenHeight * 0.060,
                   width: SizeConfig.screenWidth/3, bg: secondary,
